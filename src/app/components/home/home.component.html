@@ -1,0 +1,52 @@
+<div>
+    
+
+
+    <div>
+        <div>
+            <span   class="am-h4 am-align-left">今日特价商品：</span>
+            
+             
+            <hr>
+        </div>
+        <div>
+            <ul class="am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-thumbnail">
+
+
+                <li *ngFor="let item of TProductList" class="am-img-thumbnail">
+
+                    <div>
+                        <a>
+                            <img src="http://www.9vmall.com/{{item.image}}" alt="" style="height: 10rem;">
+
+                        </a>
+                        <div class="am-caption">
+                            <h4>{{item.name}}</h4>
+                             
+                            <span class="am-red">特价：{{item.price}}元</span>
+                            <small>{{item.type}}</small>
+                        </div>
+                        <div style="color:red;">
+                            原价：{{item.salePrice}}元
+                        </div>
+                        <div>
+
+                        </div>
+                        <p class="am-text-right">
+                            <span class="am-small am-btn am-btn-sm am-btn-warning am-round"  (click)="this.util.addToCart(item,1)" *ngIf="!this.util.isAdded(item.id)" title="加入购物车">加入购物车
+                                <i class="am-icon-shopping-cart"></i>
+                            </span>
+                            <span class="am-btn am-btn-sm am-btn-warning am-round"  (click)="this.util.removeFromCart(item.id)" *ngIf="this.util.isAdded(item.id)" title="移除购物车">移出购物车
+                                <i class="am-icon-shopping-cart"></i>
+                            </span>
+                        </p>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<app-menu-bottom></app-menu-bottom>

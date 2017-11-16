@@ -1,0 +1,62 @@
+#cash{
+    height:4.1rem;
+   background-color: #ffffff;
+    border-top:1px #c6c7b6 solid;
+    position: fixed;
+    left:0;
+    bottom:4.1rem;
+    width:100%;}
+#cash div{
+    float:left;
+    height:5.0rem;
+    text-align:center;    
+}
+ 
+#cash .quanxuan{
+    width:20%;
+    
+    color:rgb(0, 0, 0);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}
+#cash .heji{
+    width:50%;
+    text-align: right;
+    padding-right: 10px;
+    color:rgb(0, 0, 0);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}
+#cash .jiesuan{
+    width:30%;
+    text-align: center;  
+    background:#ff9402;    
+    margin-right: 0px; 
+    padding-right: 0px;
+    color:rgb(0, 0, 0);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}
+ 
+
+#clear{
+    height:4.1rem;
+   background-color: #ffffff;
+    border-top:0px #c6c7b6 solid;
+    position: fixed;
+    left:0;
+    bottom:8.2rem;
+    width:100%;}
+#clear div{
+    float: right;;
+    height:5.0rem;
+    text-align:center;    
+}
+ 
+#clear .qingkong{
+    width:40%;
+    
+    color:rgb(240, 117, 16);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}

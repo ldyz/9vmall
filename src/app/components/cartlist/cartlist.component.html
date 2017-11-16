@@ -1,0 +1,114 @@
+<hr>
+<div class="container" style="margin:0px;;margin-top:0.5rem;margin-bottom:10rem;">
+    <div class="container-fluid" *ngFor="let item of CartList" style="margin-top:0.3rem;margin-bottom:0.3rem; border-bottom:1px solid #ebe9e9">
+        <div class="row">
+            <div class="col-xs-1 text-center">
+                <input class=" img-rounded" type="checkbox" [checked]="isCheckedList[item.id]" (click)=";"
+                    #selected style="height:8rem;width:1.6rem;">
+            </div>
+            <div class="col-xs-11">
+                <div class="row">
+                    <div class="col-xs-5" style="height:9rem;margin-top:1rem;">
+                        <img src="http://www.9vmall.com/{{item.image}}" style="height:8rem;width:8rem" class="img-rounded" />
+                    </div>
+                    <div *ngIf="!isEdit[item.id]" class="col-xs-7">
+                        <div class="row">
+                            <div class="col-xs-12 h4 text-capitalize">{{item.name}}
+                                <span style="position:absolute;right:0px;">
+                                    <button class="btn btn-outline-warning  " (click)="isEdit[item.id]=!isEdit[item.id]">
+                                        <i class="glyphicon glyphicon-cog "></i>
+
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 ">{{item.description}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">{{item.type}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <span style="color:red">
+                                    <strong>¥{{item.price}}</strong>
+                                </span>
+                                <del>¥{{item.salePrice}}</del>
+
+                                <span style="position:absolute;right:0px;">
+
+                                    ×{{item.productQuantity}}
+
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="isEdit[item.id]" class="col-xs-5" style="height:8rem;">
+                        <div class="row" style="position:absolute;top:30%;left:10%;">
+                            <span class="btn btn-warning " (click)="dec(item.id)">
+                                <i class="glyphicon-minus"></i>
+                            </span>
+                            <span class="h4">
+                                <input style="width:5rem;text-align:center" #qvalue type="number" (keyup)="set(item.id,qvalue.value)" value={{item.productQuantity}}>
+                            </span>
+                            <span class="btn btn-warning " (click)="inc(item.id)">
+                                <i class="glyphicon-plus"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div *ngIf="isEdit[item.id]" class="col-xs-2">
+                        <div class="row align-top">
+                            <div class="col-xs-12" style="height:10rem">
+                                <button style="height:100%" (click)="isEdit[item.id]=!isEdit[item.id];addToSelectList(item,selected.checked)" class="btn btn-warning">
+                                    完成
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="this.CartList!=''"  id="cash">
+    <div class="quanxuan">
+        <input #selectall style="height:1.6rem;width:1.6rem;" type="checkbox" [checked]="isAllChecked()" (click)="selectedAll(selectall.checked);getMoney()">
+        <span class="h4">
+            全选
+
+        </span>
+    </div>
+    <div class="heji">
+        <span  (click)="this.util.removeAll();this.CartList=[]">
+            清空购物车
+        </span>
+
+
+        <span class="h4">
+            合计：
+            <span class="h4" style="color:red" >¥{{money}}</span>
+        </span>
+    </div>
+    <div class="btn jiesuan">
+        <span class="h3">
+            结算({{this.SelectList.length}})
+        </span>
+    </div>
+
+</div>
+
+<div style=" text-align:center;" *ngIf="this.CartList==''">
+    <h1>
+        购物车没有商品
+    </h1>
+</div>
+
+
+<app-menu-bottom></app-menu-bottom>

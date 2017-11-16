@@ -1,0 +1,46 @@
+#footer{
+    height:4.1rem;
+    background:#ff9402;
+    border-top:1px #c6c7b6 solid;
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;}
+#footer a{
+    float:left;
+    height:5.0rem;
+    text-align:center;
+    
+}
+
+ 
+#footer .backhome{
+    width:20%;
+    border-right:1px solid #c6c7b6;
+   
+    color:rgb(0, 0, 0);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}
+#footer .fenlei{
+    width:30%;
+    border-right:1px solid #c6c7b6;
+    color:rgb(0, 0, 0);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}
+#footer .cart{
+    width:30%;
+    border-right:1px solid #c6c7b6;
+    color:rgb(0, 0, 0);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}
+#footer .my{
+    width:20%;    
+    color:rgb(0, 0, 0);
+    font-size:1.6rem;
+    line-height:4.0rem;
+}
+
+ 
